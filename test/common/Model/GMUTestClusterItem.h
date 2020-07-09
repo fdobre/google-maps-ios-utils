@@ -14,14 +14,17 @@
  */
 
 #import <Foundation/Foundation.h>
-
-#import "Clustering/GMUClusterItem.h"
+#import <GoogleMapsUtils/GMUClusterItem.h>
 
 // Simple cluster item implementation for use in tests.
 @interface GMUTestClusterItem : NSObject<GMUClusterItem>
 
 @property(nonatomic, readonly) CLLocationCoordinate2D position;
-- (instancetype)initWithPosition:(CLLocationCoordinate2D)position;
+@property(nonatomic, readonly, nullable) NSString *title;
+@property(nonatomic, readonly, nullable) NSString *snippet;
+
+- (instancetype _Nonnull)initWithPosition:(CLLocationCoordinate2D)position;
+- (instancetype _Nonnull)initWithPosition:(CLLocationCoordinate2D)position title:(nullable NSString *)title snippet:(nullable NSString *)snippet;
 
 @end
 
